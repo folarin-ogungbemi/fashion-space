@@ -38,11 +38,13 @@
     {% block extra_js %}
     {% endblock %}
 
-  <title>Fashion Space|{% block extra_title %} Fashion Designer's Blog {% endblock %}</title>
+  <title>FashionSpace|{% block extra_title %} Fashion World Connect {% endblock %}</title>
 </head>
   <body>
-    
-    <main>
+
+    {% include 'includes/navbar.html' %}
+
+    <main class="mt-5">
         {% block content %}
         {%endblock %}
     </main>
