@@ -1,0 +1,22 @@
+
+/* Table of content
+----------------------------
+1. GENERAL STYLE
+    1.1 General
+    1.2 pages
+    1.3 Navbar
+    1.3 button
+    1.5 form
+
+*/
+
+/******************
+    GENERAL STYLE
+*******************/
+
+/* General */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
