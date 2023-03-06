@@ -29,11 +29,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
-
-ALLOWED_HOSTS = ['localhost']
+if development:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME',)]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.8000-folarinogun-fashionspac-mkr82sb381u.ws-eu89.gitpod.io/',
+    'https://*.fashion-space.herokuapp.com/',
     ]
 
 # Application definition
