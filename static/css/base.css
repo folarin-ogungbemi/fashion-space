@@ -15,8 +15,22 @@
 *******************/
 
 /* General */
+
+:root{
+    --fs-xl: clamp(3rem, 7vw, 5rem);
+    --col-light:#fff;
+    --col-shadow: #00000033;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Navbar */
+.top-nav{
+    background-color: var(--col-light);
+    box-shadow: 0.5px 0.5px 10px 0.5px var(--col-shadow) ;
+    width: 100%;
 }
