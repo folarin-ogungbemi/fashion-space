@@ -25,8 +25,11 @@ SECRET_KEY = 'django-insecure-z_v&k2-q^%l%!v25w5n!2p5p2moal3rl#avs6fco#7vf9kwen1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.8000-folarinogun-fashionspac-mkr82sb381u.ws-eu89.gitpod.io/',
+    ]
 
 # Application definition
 
@@ -37,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # local apps
     'home',
 ]
