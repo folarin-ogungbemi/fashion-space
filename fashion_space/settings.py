@@ -51,7 +51,6 @@ INSTALLED_APPS = [
 
     # ext-apps
     'cloudinary_storage',
-    'django.contrib.staticfiles',
     'cloudinary',
 
     # local-apps
