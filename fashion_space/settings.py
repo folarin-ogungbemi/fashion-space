@@ -58,6 +58,8 @@ INSTALLED_APPS = [
     # ext-apps
     'cloudinary_storage',
     'cloudinary',
+    'crispy_forms',
+    "crispy_bootstrap5",
 
     # local-apps
     'home',
@@ -94,6 +96,9 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 SITE_ID = 1
 
