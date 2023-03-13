@@ -30,12 +30,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 if development:
-    ALLOWED_HOSTS = ['localhost', '8000-folarinogun-fashionspac-mkr82sb381u.ws-eu89.gitpod.io']
+    ALLOWED_HOSTS = ['localhost', '8000-folarinogun-fashionspac-mkr82sb381u.ws-eu90.gitpod.io']
 else:
     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://*.8000-folarinogun-fashionspac-mkr82sb381u.ws-eu89b.gitpod.io/',
+    'https://*.8000-folarinogun-fashionspac-mkr82sb381u.ws-eu90.gitpod.io/',
     'https://*.fashion-space.herokuapp.com/',
     ]
 
@@ -59,7 +59,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'crispy_forms',
-    "crispy_bootstrap5",
+    'crispy_bootstrap5',
+    'django_countries',
 
     # local-apps
     'home',
@@ -102,14 +103,23 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 SITE_ID = 1
 
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
-ACCOUNT_USERNAME_MIN_LENGTH = 4
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS=3
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400  # 1 day in seconds
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+
+AUTH_USER_MODEL = 'home.MyUser'
+
+ACCOUNT_FORMS = {'signup': 'home.forms.CustomSignupForm',}
+
+ACCOUNT_ADAPTER = 'home.adapters.RestrictEmailAdapter'
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`

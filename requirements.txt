@@ -6,9 +6,11 @@ dj-database-url==1.2.0
 dj3-cloudinary-storage==0.0.6
 Django==4.1.7
 django-allauth==0.52.0
+django-countries==7.5.1
 django-crispy-forms==2.0
 gunicorn==20.1.0
 oauthlib==3.2.2
+Pillow==9.4.0
 psycopg2==2.9.5
 PyJWT==2.6.0
 python3-openid==3.2.0
